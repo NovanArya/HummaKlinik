@@ -333,7 +333,7 @@
             <h1>Dashboard</h1>
             <div class="user-profile">
                 @auth
-                    <span>Halo, {{ Auth::user()->username ?? Auth::user()->name }}</span>
+                    <span>{{ Auth::user()->username ?? Auth::user()->name }}</span>
                 @endauth
                 <i class="fas fa-user-circle"></i>
             </div>
@@ -346,7 +346,7 @@
                 <div class="card-header">
                     <div class="card-icon icon-blue"><i class="fas fa-user-md"></i></div>
                 </div>
-                <h3>12</h3>
+                <h3>{{ $totalDokter }}</h3>
                 <p>Dokter</p>
             </div>
 
@@ -373,7 +373,7 @@
                 <div class="card-header">
                     <div class="card-icon icon-red"><i class="fas fa-calendar-day"></i></div>
                 </div>
-                <h3>8</h3>
+                <h3>{{ $totalJanji }}</h3>
                 <p>Janji Hari Ini</p>
             </div>
         </div>
@@ -444,7 +444,7 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        display: false // Menyembunyikan legenda agar mirip gambar
+                        display: false
                     }
                 },
                 scales: {

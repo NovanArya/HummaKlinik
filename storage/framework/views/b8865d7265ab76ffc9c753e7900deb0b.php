@@ -221,6 +221,7 @@
                 <p>Sistem Informasi Poliklinik</p>
                 <div class="image-area">
                     <img src="<?php echo e(asset('images/klinik.png')); ?>" alt="Poliklinik Sehat">
+                    <p>Klinik kesehatan adalah Platform managemen kesehatan berbasis web modern yang dirancang untuk memudahkan seluruh alur pelayanan medis</p>
                 </div>
             </div>
             <div class="footer-left">

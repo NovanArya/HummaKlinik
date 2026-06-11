@@ -9,11 +9,18 @@ class DashboardController extends Controller {
     public function index() {
         $antreens       = Antrean::orderBy('no_antrean')->take(5)->get();
         $totalAntrean   = Antrean::whereDate('tanggal', today())->count();
-        // Hitung pasien unik dari antrean + riwayat
+
+        $totalDokter    = JadwalDokter::distinct('nama_dokter')->count('nama_dokter');
+
+        // Jumlah pasien unik dari antrean + riwayat pasien
         $pasienAntrean  = Antrean::distinct()->pluck('nama_pasien');
         $pasienRiwayat  = RiwayatPasien::distinct()->pluck('nama_pasien');
-        $totalPasien    = $pasienAntrean->merge($pasienRiwayat)->unique()->count() + 28;
+        $totalPasien    = $pasienAntrean->merge($pasienRiwayat)->unique()->count();
 
-        return view('dashboard', compact('antreens','totalAntrean','totalPasien'));
+        $totalJanji     = Antrean::whereDate('tanggal', today())
+                            ->whereIn('status', ['menunggu', 'diperiksa'])
+                            ->count();
+
+        return view('dashboard', compact('antreens', 'totalAntrean', 'totalDokter', 'totalPasien', 'totalJanji'));
     }
 }

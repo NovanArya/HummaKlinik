@@ -261,13 +261,13 @@
 <body>
 
     <div class="container">
-        <!-- SISI KIRI -->
         <div class="left-side">
             <div class="left-content">
                 <h2>Poliklinik Sehat</h2>
                 <p>Sistem Informasi Poliklinik</p>
                 <div class="image-area">
                     <img src="<?php echo e(asset('images/klinik.png')); ?>" alt="Poliklinik Sehat">
+                <p>Klinik kesehatan adalah Platform managemen kesehatan berbasis web modern yang dirancang untuk memudahkan seluruh alur pelayanan medis</p>
                 </div>
             </div>
             <div class="footer-left">
@@ -275,7 +275,6 @@
             </div>
         </div>
 
-        <!-- SISI KANAN -->
         <div class="right-side">
             <div class="login-wrapper">
                 <div class="login-header">
@@ -283,7 +282,6 @@
                     <p>Silakan masuk untuk melanjutkan</p>
                 </div>
 
-                
                 <?php if(session('success')): ?>
                     <div class="alert-success">
                         <i class="fas fa-check-circle"></i>
@@ -323,7 +321,8 @@
                     <button type="submit" class="btn-submit">Masuk</button>
 
                     <div class="register-link">
-                        <a href="<?php echo e(route('register')); ?>">Buat akun</a>
+                        <p>Demo: admin@polikliniksehat.com / password</p>
+                        <a href="<?php echo e(route('register')); ?>">Buat akun?</a>
                     </div>
                 </form>
             </div>

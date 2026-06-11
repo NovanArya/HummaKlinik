@@ -163,10 +163,10 @@
                 <div class="form-group">
                     <label>Role <span style="color:red">*</span></label>
                     <select name="role" id="inputRole" required>
-                        <option value="Admin">Admin</option>
+                        
+                        <option value="Petugas">Admin</option>
                         <option value="Petugas">Petugas</option>
                         <option value="Dokter">Dokter</option>
-
                     </select>
                 </div>
                 <div class="modal-footer">
