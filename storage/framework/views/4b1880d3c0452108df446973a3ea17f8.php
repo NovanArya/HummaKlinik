@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Poliklinik Sehat</title>
-    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Chart.js untuk Grafik -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
@@ -26,7 +24,7 @@
         /* --- SIDEBAR --- */
         .sidebar {
             width: 250px;
-            background-color: #1a2332; /* Warna biru tua sidebar */
+            background-color: #1a2332;
             color: #b0b8c6;
             display: flex;
             flex-direction: column;
@@ -83,7 +81,7 @@
         }
 
         .nav-menu a.active {
-            background-color: #2d68c4; /* Biru terang */
+            background-color: #2d68c4;
             color: white;
         }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Poliklinik Sehat</title>
+    <title>Register - Poliklinik Sehat</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -28,7 +28,6 @@
             display: flex;
             width: 900px;
             height: auto;
-            min-height: 550px;
             overflow: hidden;
             max-width: 90%;
         }
@@ -43,13 +42,11 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
             position: relative;
         }
 
-        .left-content {
-            z-index: 2;
-        }
+        .left-content { z-index: 2; }
 
         .left-side h2 {
             font-size: 28px;
@@ -81,7 +78,7 @@
             opacity: 0.8;
         }
 
-        /* --- SISI KANAN (LOGIN FORM) --- */
+        /* --- SISI KANAN (REGISTER FORM) --- */
         .right-side {
             width: 50%;
             background-color: white;
@@ -91,29 +88,29 @@
             padding: 40px;
         }
 
-        .login-wrapper {
+        .register-wrapper {
             width: 100%;
             max-width: 320px;
         }
 
-        .login-header {
+        .register-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
-        .login-header h2 {
+        .register-header h2 {
             font-size: 24px;
             color: #333;
             margin-bottom: 5px;
         }
 
-        .login-header p {
+        .register-header p {
             font-size: 14px;
             color: #666;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
 
         .form-group label {
@@ -151,35 +148,7 @@
             font-size: 14px;
         }
 
-        .options-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .options-row label {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .options-row label input {
-            margin-right: 5px;
-        }
-
-        .options-row a {
-            color: #4a90e2;
-            text-decoration: none;
-        }
-
-        .options-row a:hover {
-            text-decoration: underline;
-        }
-
-        .btn-submit {
+        .btn-register {
             width: 100%;
             padding: 10px;
             background-color: #0d47a1;
@@ -190,40 +159,28 @@
             font-size: 15px;
             cursor: pointer;
             transition: background 0.3s;
+            margin-top: 5px;
         }
 
-        .btn-submit:hover {
+        .btn-register:hover {
             background-color: #1565c0;
         }
 
-        .register-link {
+        .login-link {
             text-align: center;
             margin-top: 18px;
             font-size: 13px;
             color: #555;
         }
 
-        .register-link a {
+        .login-link a {
             color: #4a90e2;
             text-decoration: none;
             font-weight: 600;
         }
 
-        .register-link a:hover {
+        .login-link a:hover {
             text-decoration: underline;
-        }
-
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            border-radius: 5px;
-            padding: 10px 14px;
-            font-size: 13px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .alert-error {
@@ -236,21 +193,17 @@
             margin-bottom: 16px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
-                height: auto;
                 width: 95%;
             }
-            .left-side {
+            .left-side, .right-side {
                 width: 100%;
-                padding: 40px 20px;
-                border-radius: 10px 10px 0 0;
             }
-            .right-side {
-                width: 100%;
-                padding: 40px 20px;
+            .left-side {
+                border-radius: 10px 10px 0 0;
+                padding: 30px 20px;
             }
             .image-area {
                 max-width: 150px;
@@ -267,7 +220,7 @@
                 <h2>Poliklinik Sehat</h2>
                 <p>Sistem Informasi Poliklinik</p>
                 <div class="image-area">
-                    <img src="{{ asset('images/klinik.png') }}" alt="Poliklinik Sehat">
+                    <img src="<?php echo e(asset('images/klinik.png')); ?>" alt="Poliklinik Sehat">
                 </div>
             </div>
             <div class="footer-left">
@@ -277,36 +230,44 @@
 
         <!-- SISI KANAN -->
         <div class="right-side">
-            <div class="login-wrapper">
-                <div class="login-header">
-                    <h2>Login</h2>
-                    <p>Silakan masuk untuk melanjutkan</p>
+            <div class="register-wrapper">
+                <div class="register-header">
+                    <h2>Register</h2>
+                    <p>Buat akun baru untuk melanjutkan</p>
                 </div>
 
-                {{-- Notifikasi sukses setelah register --}}
-                @if (session('success'))
-                    <div class="alert-success">
-                        <i class="fas fa-check-circle"></i>
-                        {{ session('success') }}
-                    </div>
-                @endif
-
-                {{-- Pesan error login --}}
-                @if ($errors->any())
+                <?php if($errors->any()): ?>
                     <div class="alert-error">
                         <i class="fas fa-exclamation-circle"></i>
-                        {{ $errors->first() }}
-                    </div>
-                @endif
+                        <?php echo e($errors->first()); ?>
 
-                <form action="{{ route('login.submit') }}" method="POST">
-                    @csrf
+                    </div>
+                <?php endif; ?>
+
+                <form method="POST" action="<?php echo e(route('register.submit')); ?>">
+                    <?php echo csrf_field(); ?>
+
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="name" id="name" placeholder="Masukkan nama lengkap" value="<?php echo e(old('name')); ?>" required>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
                         <div class="input-wrapper">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" id="email" name="email" placeholder="Masukkan email" value="{{ old('email') }}" required>
+                            <input type="email" name="email" id="email" placeholder="Masukkan email" value="<?php echo e(old('email')); ?>" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user-tag"></i>
+                            <input type="text" name="username" id="username" placeholder="Masukkan username" value="<?php echo e(old('username')); ?>" required>
                         </div>
                     </div>
 
@@ -314,21 +275,22 @@
                         <label for="password">Password</label>
                         <div class="input-wrapper">
                             <i class="fas fa-lock"></i>
-                            <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+                            <input type="password" name="password" id="password" placeholder="Masukkan password" required>
                         </div>
                     </div>
 
-                    <div class="options-row">
-                        <label>
-                            <input type="checkbox" name="remember"> Ingat saya
-                        </label>
-                        <a href="#">Lupa password?</a>
+                    <div class="form-group">
+                        <label for="password_confirmation">Konfirmasi Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Konfirmasi password" required>
+                        </div>
                     </div>
 
-                    <button type="submit" class="btn-submit">Masuk</button>
+                    <button type="submit" class="btn-register">Daftar</button>
 
-                    <div class="register-link">
-                        Belum punya akun? <a href="{{ route('register') }}">Daftar di sini</a>
+                    <div class="login-link">
+                        Sudah punya akun? <a href="<?php echo e(route('login')); ?>">Login</a>
                     </div>
                 </form>
             </div>
@@ -337,3 +299,4 @@
 
 </body>
 </html>
+<?php /**PATH C:\poliklinik28\resources\views/auth/register.blade.php ENDPATH**/ ?>

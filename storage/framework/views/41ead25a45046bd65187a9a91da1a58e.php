@@ -267,7 +267,7 @@
                 <h2>Poliklinik Sehat</h2>
                 <p>Sistem Informasi Poliklinik</p>
                 <div class="image-area">
-                    <img src="https://cdn-icons-png.flaticon.com/512/263/263115.png" alt="Ilustrasi Klinik">
+                    <img src="<?php echo e(asset('images/klinik.png')); ?>" alt="Poliklinik Sehat" width="200" height="200">
                 </div>
             </div>
             <div class="footer-left">
