@@ -318,17 +318,10 @@
                         </div>
                     </div>
 
-                    <div class="options-row">
-                        <label>
-                            <input type="checkbox" name="remember"> Ingat saya
-                        </label>
-                        <a href="#">Lupa password?</a>
-                    </div>
-
                     <button type="submit" class="btn-submit">Masuk</button>
 
                     <div class="register-link">
-                        Belum punya akun? <a href="{{ route('register') }}">Daftar di sini</a>
+                        <a href="{{ route('register') }}">Buat akun</a>
                     </div>
                 </form>
             </div>

@@ -224,7 +224,7 @@
                 </div>
             </div>
             <div class="footer-left">
-                &copy; 2024 Poliklinik Sehat
+                &copy; 2026 Poliklinik Sehat
             </div>
         </div>
 
@@ -290,7 +290,7 @@
                     <button type="submit" class="btn-register">Daftar</button>
 
                     <div class="login-link">
-                        Sudah punya akun? <a href="<?php echo e(route('login')); ?>">Login</a>
+                        <a href="<?php echo e(route('login')); ?>">Login akun yang sudah ada?</a>
                     </div>
                 </form>
             </div>

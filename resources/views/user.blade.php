@@ -83,7 +83,7 @@
         <div class="header-container">
             <h1>Data User</h1>
             <div class="action-bar">
-                <button class="btn-tambah" onclick="bukaModalTambah()"><i class="fas fa-plus"></i> Tambah User+</button>
+                <button class="btn-tambah" onclick="bukaModalTambah()"><i class="fas fa-plus"></i> Tambah User</button>
                 <form method="GET" action="/user" style="display:contents;">
                     <div class="search-box">
                         <i class="fas fa-search"></i>
@@ -166,7 +166,6 @@
                         <option value="Admin">Admin</option>
                         <option value="Petugas">Petugas</option>
                         <option value="Dokter">Dokter</option>
-                        <option value="Pasien">Pasien</option>
                     </select>
                 </div>
                 <div class="modal-footer">
