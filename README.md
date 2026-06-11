@@ -1,6 +1,3 @@
-## Clone Repository
-- 
-
 # Poliklinik Sehat
 
 Poliklinik Sehat adalah sistem informasi manajemen poliklinik berbasis web yang dibangun menggunakan framework Laravel 11. Aplikasi ini hadir sebagai solusi digital untuk membantu tenaga medis, admin, dan staf poliklinik dalam mengelola seluruh kegiatan operasional sehari-hari secara lebih terstruktur, efisien, dan mudah dipantau.
