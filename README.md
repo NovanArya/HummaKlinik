@@ -1,3 +1,6 @@
+## Clone Repository
+- 
+
 # Poliklinik Sehat
 
 Poliklinik Sehat adalah sistem informasi manajemen poliklinik berbasis web yang dibangun menggunakan framework Laravel 11. Aplikasi ini hadir sebagai solusi digital untuk membantu tenaga medis, admin, dan staf poliklinik dalam mengelola seluruh kegiatan operasional sehari-hari secara lebih terstruktur, efisien, dan mudah dipantau.
@@ -29,19 +32,32 @@ Dari sisi keamanan, aplikasi ini dilengkapi dengan sistem autentikasi berbasis s
 ---
 
 ## Struktur Fitur Per Halaman
-/login — Halaman Login
-Pintu masuk utama aplikasi. Pengguna memasukkan email dan password. Jika belum punya akun, bisa diarahkan ke halaman register.
-/register — Halaman Register
-Pendaftaran akun baru. Role yang didaftarkan secara default adalah Pasien.
-/ — Dashboard
-Menampilkan 4 kartu statistik yaitu jumlah dokter (diambil dari data jadwal dokter), jumlah pasien (gabungan dari antrean dan riwayat pasien), total antrean hari ini, dan jumlah janji aktif. Di bawahnya terdapat grafik kunjungan 7 hari terakhir dan tabel 5 antrean terbaru.
-/user — Manajemen User
-Menampilkan daftar seluruh pengguna sistem. Admin bisa menambah, mengubah, dan menghapus data user.
-/jadwaldokter — Jadwal Dokter
-Menampilkan daftar jadwal praktik dokter lengkap dengan nama dokter, spesialis, hari, jam mulai, dan jam selesai. Data di sini mempengaruhi jumlah dokter yang tampil di dashboard.
-/jadwalpasien — Jadwal Pasien
-Menampilkan daftar pasien berdasarkan data antrean yang sudah terdaftar, diurutkan berdasarkan nomor antrean.
-/antrean — Daftar Antrean
-Halaman utama pengelolaan antrean harian. Tersedia fitur tambah antrean, panggil pasien berikutnya, tandai selesai, edit, dan hapus data antrean.
-/riwayatpasien — Riwayat Pasien
-Menampilkan rekam jejak pemeriksaan pasien yang sudah selesai ditangani.
+
+- **Halaman Login** — igunakan untuk masuk ke sistem menggunakan akun yang sudah terdaftar.
+- **Dashboard** — menampilkan ringkasan statistik poliklinik, grafik kunjungan mingguan, dan daftar antrean terbaru.
+- **Halaman User** — mengelola data akun pengguna sistem, mulai dari menambah, mengubah, menghapus, hingga mencari pengguna berdasarkan nama atau role.
+- **Halaman Jadwal Dokter** — mengatur jadwal praktik dokter beserta spesialis dan jam, yang secara otomatis tersinkron ke pilihan dokter di halaman antrean.
+- **Halaman Jadwal Pasien** — menampilkan daftar antrean aktif sebagai jadwal harian pasien dan menyediakan form tambah janji baru.
+- **Halaman Daftar Antrean** — pusat pengelolaan antrean harian — mendaftarkan pasien, memanggil urutan berikutnya, dan menyelesaikan pemeriksaan agar data masuk ke riwayat.
+- **Halaman Riwayat Pasien** — menampilkan rekam medis pasien per kunjungan yang terisi otomatis dari proses penyelesaian antrean.
+
+---
+
+## Panduan Penggunaan Aplikasi
+
+1. Jalankan project menggunakan php artisan serve setelah proses instalasi selesai.
+2. Buka aplikasi melalui browser, lalu login menggunakan akun admin yang tersedia.
+3. Setelah masuk, gunakan Dashboard untuk memantau kondisi poliklinik secara keseluruhan.
+4. Buka halaman Jadwal Dokter dan tambahkan jadwal praktik dokter sebelum memulai pendaftaran antrean.
+5. Gunakan halaman Daftar Antrean untuk mendaftarkan pasien — nomor antrean terisi otomatis secara urut.
+6. Klik Panggil Berikutnya untuk memanggil pasien sesuai urutan, lalu klik Selesai setelah pemeriksaan selesai.
+7. Data pasien yang sudah selesai akan otomatis muncul di halaman Riwayat Pasien.
+8. Gunakan halaman User untuk mengelola akun petugas, dokter, atau admin yang menggunakan sistem ini.
+
+---
+
+## Jalankan Poject
+
+- composer install
+- php artisan migrate:fresh --seed
+- php artisan serve
