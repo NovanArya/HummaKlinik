@@ -267,11 +267,11 @@
                 <h2>Poliklinik Sehat</h2>
                 <p>Sistem Informasi Poliklinik</p>
                 <div class="image-area">
-                    <img src="<?php echo e(asset('images/klinik.png')); ?>" alt="Poliklinik Sehat" width="200" height="200">
+                    <img src="<?php echo e(asset('images/klinik.png')); ?>" alt="Poliklinik Sehat">
                 </div>
             </div>
             <div class="footer-left">
-                &copy; 2024 Poliklinik Sehat
+                &copy; 2026 Poliklinik Sehat
             </div>
         </div>
 

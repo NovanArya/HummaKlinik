@@ -271,7 +271,7 @@
                 </div>
             </div>
             <div class="footer-left">
-                &copy; 2024 Poliklinik Sehat
+                &copy; 2026 Poliklinik Sehat
             </div>
         </div>
 

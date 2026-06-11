@@ -384,7 +384,7 @@
             <div class="chart-container">
                 <div class="section-title">Grafik Kunjungan (7 Hari Terakhir)</div>
                 <div class="chart-wrapper">
-                    <canvas id="visitChart"></canvas>
+                    <canvas id="visithart"></canvas>
                 </div>
             </div>
 
